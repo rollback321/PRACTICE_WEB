@@ -1,0 +1,59 @@
+.legend_tema {
+    border: solid 1px black;
+    font-size: 10px ;
+    font-weight: bold ;
+    text-align: left ;
+    border-radius: 8px;
+    width: 115px;
+    background: #ffffff;
+    padding: 1px 3px 1px 10px;
+    margin-top: 5px;
+    }
+.fieldset_Content_tema {
+    border: solid 1px black;
+    font-size: 10px ;
+    font-weight: bold ;
+    text-align: left;
+    border-radius: 8px;
+    width: 100%;
+    background:#F2F3F5;
+    padding: 1px 3px 1px 10px;
+    margin-top: 5px;
+}
+
+.dark-mode .legend_tema {
+    border: solid 1px rgb(255, 255, 255);
+    font-size: 10px ;
+    font-weight: bold;
+    text-align: left ;
+    border-radius: 8px;
+    width: 115px;
+    background: #343A40;
+    padding: 1px 3px 1px 10px;
+    margin-top: 5px;
+    }
+    .dark-mode .fieldset_Content_tema {
+    border: solid 1px rgb(255, 255, 255);
+    font-size: 10px;
+    font-weight: bold ;
+    text-align: left ;
+    border-radius: 8px;
+    width: 100%;
+    background: #343A40;
+    padding: 1px 3px 1px 10px;
+    margin-top: 5px;
+}
+
+.border_Inputs{
+    border-radius:7px !important;
+}
+
+.dark-mode .btn-outline-primary {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+.dark-mode .btn-outline-secondary {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+

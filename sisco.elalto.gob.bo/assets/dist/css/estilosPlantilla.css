@@ -1,0 +1,16 @@
+.color-menu{
+    background: #000b16 ;
+}
+.text-color{
+    color: #fff !important  ;
+}
+.color-nav{
+	background: #000b16 ;
+}
+.hov-li:hover{
+    background: #2667c8;
+}
+.sub-menu:hover{
+	background: #000b16 ;
+    opacity: .8;    
+}

@@ -1,0 +1,29 @@
+.span{display:block; 
+    border: 1px solid;
+   
+    position: absolute;
+    font-size:.7em;
+    margin:10%;
+    padding:5px;
+
+    width:200px}
+.confirmacion{
+    border:0,5px solid;
+    box-shadow: 4px 4px 20px rgba(113, 238, 161, 0.85);
+    border-radius: 2%;
+    outline: none;
+    color: rgb(44, 43, 43);
+    position: absolute;
+    background-color: #C6FFD5;
+    border-color: green;
+}
+.negacion{
+    border:0,5px solid;
+    border-radius: 2%;
+    position: absolute;
+    box-shadow: 4px 4px 20px rgba(238, 105, 105, 0.85);
+    outline: none;
+    color: rgb(44, 43, 43);
+    background-color: #f3897b;
+    border-color: rgb(247, 94, 94);
+}
