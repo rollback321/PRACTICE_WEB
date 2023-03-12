@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>1.- METODO APPEND AGREGA ELEMENTOS HTML AL FINAL DE ALGUN ELEMENTO HTML</h1>
+        <ul>
+            <li > elemento 1</li>
+        </ul>
+        <input type="text" value="" id="input_append" placeholder="escriba elemento" />
+        <button id="btn_append">AGREGAR</button>
+
+    <h1>2.- METODO PREPEND AGREGA ELEMENTOS HTML AL INICIO DE ALGUN ELEMENTO HTML</h1>
+        <ul id="ul_prepend" class="ul_class">
+             <li>elemento 10</li> 
+        </ul>
+        <input type="text" value="" id="input_prepend" placeholder="escriba elemento" />
+        <button id="btn_prepend">AGREGAR</button>
+   
+    <h1>3.-  METODO BEFORE AFTER, AGREGA ELEMENTOS HTML ANTES Y DESPUES</h1>
+        <video src=""></video>
+        <br>
+        <input type="text" id="after_before"/><br>
+        <button id="btn_before">metodo before</button>
+        <button id="btn_after">metodo after</button>
+   
+        <h1>4.-  METODO REMOVE, ELIMINAR ELEMENTOS HTML</h1>
+        <br>
+        <ul>
+            <li class="elem_1">elemento 1</li>
+            <li class="elem_2">elemento 2</li>
+            <li class="elem_3">elemento 3</li>
+            <li class="elem_5">elemento 5</li>
+        </ul>
+        <button id="btn_eliminar">Eliminar</button>
+   
+    <h1>5.- METODO EMPTY, ELIMINAR ELEMENTOS HTML DENTRO DE UN ELEMENTO HTML </h1>
+        <div id="container">
+            <h4>elemento html</h4>
+            <h4>elemento html</h4>
+            <h4>elemento html</h4>
+            <h4>elemento html</h4>
+        </div>
+        <button id="btn_empty">Eliminar elementos</button>
+
+    <h1>6.- METODO REMOVE (PARAMETROS), ELIMINAR ELEMENTOS HTML</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam ducimus ea fuga.</p><br>
+        <p id="p_remove">Lorem ipsum dolor sit amet.</p><br>
+        <button id="btn_remove_pto">eliminar elemento html</button>
+
+    <h1>7.- METODO ADDCLASS y REMOVECLASS, AGREGA Y ELIMINA CLASES A ELEMENTOS HTML</h1>
+        <p1 >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam ducimus ea fuga.</p1><br>
+        <p2 >Lorem ipsum dolor sit amet.</p2><br>
+        <h4 >Lorem ipsum dolor sit amet.</h4><br>
+        <button id="btn_addclass">AGREGAR CLASS</button>
+        <button id="btn_removeclass">ELIMINAR CLASS</button>    
+        <style>
+            .import{
+                  font-weight: bold;  
+                  font-size: xx-large;
+            }
+            .import2{
+                    color:blue;
+            }
+        </style>
+
+    <h1>8.- (METODO ADDCLASS y REMOVECLASS) = TOOGLECLASS, AGREGA Y ELIMINA CLASES A ELEMENTOS HTML</h1>
+        <p3 >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam ducimus ea fuga.</p3><br>
+        <p4 >Lorem ipsum dolor sit amet.</p4><br>
+        <h5 >Lorem ipsum dolor sit amet.</h5><br>
+        <button id="btn_toogleclass">AGREGAR O ELIMINAR CLASS</button>
+       
+        <style>
+            .import4{
+                    color:blue;
+            }
+        </style>  
+        
+  
+   <script>
+        //1.- METODO APPEND AGREGA ELEMENTOS HTML AL FINAL DE ALGUN ELEMENTO HTML
+        var cont=1;
+        var elemento;
+        $(document).ready(function(){
+            $("#btn_append").click(function(){
+               elemento = $("#input_append").val();
+               cont++;
+               $("ul").append("<li>"+ elemento+" "+cont+"</li>");
+            });
+        });
+        //2.- METODO APPEND AGREGA ELEMENTOS HTML AL INICIO DE ALGUN ELEMENTO HTML
+
+        var cont_prepend = 10;
+        var elemento_valor ;
+        $(document).ready(function(){
+            $("#btn_prepend").click(function(){
+                elemento_valor = $("#input_predend").val();
+                cont_prepend--;
+                $(".ul_class").prepend("<li>"+ elemento_valor +" "+cont_prepend+ "</li>");
+            });
+        });
+        //3.-  METODO BEFORE AFTER, AGREGA ELEMENTOS HTML ANTES Y DESPUES<
+
+        var dato;
+        $(document).ready(function(){
+            $("#btn_before").click(function(){
+                dato = $("#after_before").val();
+                $("video").before(dato);
+            });
+
+            $("#btn_after").click(function (){
+                dato = $("#after_before").val();
+                $("video").after(dato);
+            });
+        });
+   
+        //4.-  METODO REMOVE, ELIMINAR ELEMENTOS HTML
+        var elem = 5;
+        $(document).ready(function (){
+                $("#btn_eliminar").click(function(){
+                    if(elem > 0){
+                            $(".elem_"+elem).remove();
+                            elem--;  
+                    } else {
+                            alert("No hay mas elementos");
+                    }
+                });
+        });
+
+        //5.- METODO EMPTY, ELIMINAR ELEMENTOS HTML DENTRO DE UN ELEMENTO HTML 
+        $(document).ready(function(){
+            $("#btn_empty").click(function (){
+                $("#container").empty();
+            });
+
+            
+        });
+
+        //6.- METODO REMOVE (PARAMETROS), ELIMINAR ELEMENTOS HTML
+        $(document).ready(function(){
+            $("#btn_remove_pto").click(function(){
+                $("p").remove("#p_remove");
+            });
+        });
+  
+        // 7.- METODO ADDCLASS , AGREGA CLASES A ELEMENTOS HTML
+      $(document).ready(function(){
+        $("#btn_addclass").click(function(){
+            $("p2,p1").addClass("import");
+            $("h4").addClass("import2");
+        });
+
+        $("#btn_removeclass").click(function (){
+            $("p2,p1").removeClass("import");
+            $("h4").removeClass("import2");
+        });
+
+      });
+
+      //
+      $(document).ready(function(){
+        $("#btn_toogleclass").click(function(){
+            $("p3,p4,h5").toggleClass("import4");
+        });
+      });
+  </script>    
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+    
+</head>
+<body>
+
+    <h1>1.- j QUERY CSS, PERMITE EL USO DE CSS MEDIANTE JQUERY</h1>
+            <h3>Cabecera 1</h3>
+            <h3>Cabecera 2</h3>
+            <h4>Cabecera 3</h4>
+            <h4>Cabecera 4</h4>
+        <button class="btn btn-primary" type="button" id="btn_text">Formato css</button>
+
+   <h1>2.- j QUERY CSS MULTIPLE, PERMITE EL USO DE CSS MEDIANTE JQUERY</h1>
+            <h5>Cabecera 1</h5>
+            <h5>Cabecera 2</h5>
+            <h6>Cabecera 3</h6>
+            <h6>Cabecera 4</h6><br>
+            <button class="btn btn-primary" type="button" id="btn_text1">Formato css</button>
+
+    <h1>3.- j QUERY ,OBTENER EL ANCHO ALTO DE UNA ETIQUETA HTML</h1>
+            <div id="ancho_alto"></div>
+            <button class="btn btn-primary" type="button" id="btn_text2">Formato css</button>
+            |<style>
+                #ancho_alto{
+                    width: 350px;
+                    height: 250px;
+                    padding: 20px;
+                    margin: 7px;
+                    border: 20px solid blue;
+                    background-color: aquamarine;
+                    color: rgb(32, 33, 34);
+                }
+            </style>
+            
+    <h1>4.- JQUERY AJAX METODO LOAD, CARGAR UN ARCHIVO.PHP CON ELEMENTOS HTML </h1>
+            <div id="ajax1"></div>
+            <button id="bt" class="btn btn-primary" type="button">Ejecutar</button>
+            <style>
+                #ajax1{
+                    width: 350px;
+                    height: 250px;
+                    padding: 20px;
+                    margin: 7px;
+                    border: 20px solid blue;
+                    background-color: aquamarine;
+                    color: rgb(32, 33, 34);
+                }
+            </style>
+
+    <h1>5.- JQUERY AJAX METODO LOAD, CARGAR UN ARCHIVO.PHP CON ELEMENTOS HTML VERIFICANDO LA CARGA </h1>
+            <div id="ajax2"></div>
+            <button id="bt1" class="btn btn-primary" type="button">Ejecutar</button>
+            <style>
+                #ajax2{
+                    width: 350px;
+                    height: 250px;
+                    padding: 20px;
+                    margin: 7px;
+                    border: 20px solid blue;
+                    background-color: aquamarine;
+                    color: rgb(32, 33, 34);
+                }
+            </style>
+
+    <h1>6.- JQUERY AJAX METODO GET, OBTIENE UN ELEMENTO ESPECÍFICO </h1>
+            <button id="bt_get" class="btn btn-primary" type="button">Ejecutar</button>
+    <h1>7.- JQUERY AJAX METODO POST, OBTIENE UN ELEMENTOS</h1>
+            <button id="bt_post" class="btn btn-primary" type="button">Ejecutar</button>        
+<script>
+  //1.- j QUERY CSS, PERMITE EL USO DE CSS MEDIANTE JQUERY 
+  $(document).ready(function () {
+        $("#btn_text").click(function (e) { 
+                $("h3").css("font-size","15px");
+                $("h4").css("background-color", "blue");
+        });
+    });
+
+  //2.- j QUERY CSS MULTIPLE, PERMITE EL USO DE CSS MEDIANTE JQUERY 
+  $(document).ready(function () {
+        $("#btn_text1").click(function (e) { 
+                $("h5").css({"font-size":"15px","color":"blue"});
+                $("h6").css({"background-color":"blue","color":"white"});
+        });
+    });
+
+  //3.- JQUERY ,OBTENER EL ANCHO ALTO DE UNA ETIQUETA HTML
+  var texto = "";
+  $(document).ready(function () {
+        $("#btn_text2").click(function (e) { 
+                texto += "ancho div:" +$("#ancho_alto").width() + "<br>";
+                texto += "alto div:" +$("#ancho_alto").height(); 
+                $("#ancho_alto").html(texto); 
+                console.log("fdsfds");
+        });
+    });
+
+//4.- JQUERY AJAX METODO LOAD, CARGAR UN ARCHIVO.PHP CON ELEMENTOS HTML 
+$(document).ready(function () {
+    $("#bt").click(function (e) { 
+        $("#ajax1").load("archivo_ejemplo5_ejem4.html");       
+    });
+});
+
+//5.- JQUERY AJAX METODO LOAD, CARGAR UN ARCHIVO.PHP CON ELEMENTOS HTML VERIFICANDO LA CARGA 
+$(document).ready(function () {
+    $("#bt1").click(function (e) { 
+             $("#ajax2").load("archivo_ejemplo5_ejem4.html", function (response, status, request) {
+                if(status == "success"){
+                        alert("carga exitosa");
+                } else {
+                        alert("error de carga");
+                }                
+             });  
+    });
+});
+
+//6.- JQUERY AJAX METODO GET, OBTIENE UN ELEMENTO ESPECÍFIC
+$(document).ready(function () {
+    $("#bt_get").click(function (e) { 
+        $.get("http://localhost/PRACTICA_JQUERY/archivo_ejemplo5_ejem6.php", function(data){
+            alert(data);
+        }); 
+    });
+});
+
+//7.- JQUERY AJAX METODO POST, OBTIENE UN ELEMENTOS
+$(document).ready(function () {
+    $("#bt_post").click(function (e) { 
+        $.post("http://localhost/PRACTICA_JQUERY/archivo_ejemplo5_ejem6.php",{
+            name: "Ronald",
+            city: "El Alto"
+        },
+        function (data,status) { 
+            alert(data+" /n "+"status:"+status);
+         });
+    });
+});
+
+</script>
+        
+</body>
+</html>

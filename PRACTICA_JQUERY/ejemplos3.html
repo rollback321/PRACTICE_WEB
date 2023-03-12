@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>1.- get OBTENER EL VALOR DEL TEXT DE LA ETIQUETA HTML</h1>
+                    <button id="go">Leer texto</button>
+                 <p id="texto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus itaque aliquid autem asperiores iusto dolorum exercitationem et quidem atque. 
+                 Repellendus quos impedit voluptatem sint voluptates ut consequuntur ipsam velit sequi.</p>
+
+    <h1>2.- get OBTENER EL VALOR DEL TEXT DE LA ETIQUETA HTML (METODO HTML)</h1>
+                 <button id="go1">Leer texto</button>
+              <p id="texto1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus itaque aliquid autem asperiores iusto dolorum exercitationem et quidem atque. 
+              Repellendus quos impedit voluptatem sint voluptates ut consequuntur ipsam velit sequi.</p>
+    <h1>3 .- get  OBTENER EL VALOR DE UN INPUT (METODO .VAL())</h1>
+                <button id="val_texto">OBTENER TEXTO</button>
+                <input type="text" name="" id="input" value="hello word"/>
+    <h1>4 .- get OBTENER EL VALOR DEL ATRIBUTO (METODO .ATTR())</h1>
+                <button id="val_texto1">OBTENER TEXTO</button>
+                <p id="texto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem similique explicabo accusantium.</p>
+    <h1>5 .- set PONER EL VALOR, EN LA ETIQUETA DE TEXTO</h1>
+                <button id="val_texto2">EVALUAR TEXTO</button>
+                <p id="te">
+                    adipisicing elit. Quidem similique explicabo accusantium.</p>
+
+     <h1>6 .- set PONER EL VALOR, EN LA ETIQUETA DE HTML</h1>
+                    <button id="val_text3">EVALUAR TEXTO</button>
+                    <p id="t3">
+                        adipisicing elit. Quidem similique explicabo accusantium.</p>
+    <h1>7 .- set PONER EL VALOR, EN LA ETIQUETA DE HTML INPUT</h1>
+                        <button id="val_text4">EVALUAR TEXTO</button>
+                        <input type="text" name="" id="input_set" value="valor por defecto"/>
+    <h1>8 .- set PONER EL VALOR, MODIFICAR UN ATRIBUTO DE LA ETIQUETA HTML</h1>
+                        <button id="val_text5">EVALUAR TEXTO</button>
+                        <p id="attr_mod"></p>
+   
+   <script>
+        //1.- OBTENER EL VALOR DEL TEXT DE LA ETIQUETA HTML (metodo text)
+        $(document).ready( function(){
+                $("#go").click(function(){
+                    alert("texto    " + $("#texto").text());
+                });
+        });
+        //2.- OBTENER EL VALOR DEL TEXT DE LA ETIQUETA HTML (METODO HTML)
+        $(document).ready(function (){
+            $("#go1").click(function (){
+                alert($("#texto1").html());
+            });
+        });
+        //3 .- OBTENER EL VALOR DE UN INPUT (METODO .VAL()))
+        $(document).ready(function (){
+            $("#val_texto").click(function(){
+                alert($("#input").val());
+            });
+        });
+        //4 .- OBTENER EL VALOR DEL ATRIBUTO (METODO .ATTR())
+        $(document).ready(function(){
+                $("#val_texto1").click(function(){
+                    alert($("#texto").attr("id"));
+                });
+        });
+        //5 .- set PONER EL VALOR, EN LA ETIQUETA DE TEXTO
+        $(document).ready(function (){
+            $("#val_texto2").click(function(){
+                $("#te").text("Metodo set");
+            });
+        })
+        //6 .- set PONER EL VALOR, EN LA ETIQUETA DE HTML
+        $(document).ready(function(){
+            $("#val_text3").click(function(){
+                $("#t3").html("<h1>Agregando la etiqueta <h1></h1>");
+            });
+        });
+       //7 .- set PONER EL VALOR, EN LA ETIQUETA DE HTML INPUT
+        $(document).ready(function (){
+            $("#val_text4").click(function(){
+                $("#input_set").val("valor modificado");
+            });
+        });
+        // 8 .- set PONER EL VALOR, MODIFICAR UN ATRIBUTO DE LA ETIQUETA HTML
+        $(document).ready(function(){
+            $("#val_text5").click(function(){
+                $("#attr_mod").attr("id", "cambio");
+                alert("atributo id=attr_mod cambio a id="+$("p").attr("id"));
+            });
+        });  
+
+                      
+ </script>
+</body>
+</html>

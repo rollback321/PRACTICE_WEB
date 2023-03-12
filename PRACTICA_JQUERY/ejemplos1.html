@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"> </script> 
+</head>
+<body>
+    <h3>1- PERMITE OCULTAR EL ELEMENTO CUANDO SE HAGA CLICK</h3>
+    <button>Ocultar</button>
+    <p>hgfhgfhgfkjlhfdgsdf</p>
+<br>
+    <h3>2- (a)ELEMENTO SELECCIONADO, MISMO SE OCULTE <br> 
+        <h6>Ocultarme</h6>
+        (b)CURSOR LLEVADO AL ELEMENTO, EMITA MENSAJE ID 
+        <p id="mensaje"> mensaje 1  </p>
+   <br>
+        (c)CURSOR LLEVADO AL ELEMENTO, EMITA MENSAJE LA CLASE DEL ELEMENTO HTML
+        <p class="mensaje"> mensaje 2 </p> <br>
+        (d)CURSOR LLEVADO AL ELEMENTO DESDE ABAJO, EMITA MENSAJE DESDE LA CLASE DEL ELEMENTO HTML
+        <p class="mensaje3"> mensaje 3 </p>
+        (e)CURSOR LLEVADO AL ELEMENTO DESDE ARRIBA, EMITA MENSAJE LA CLASE DEL ELEMENTO HTML
+        <p class="mensaje4"> mensaje 4 </p>
+        (f)DEPENDIENDO DEL MOVIMIENTO SE PRODUCIRA EL COLOR<br><br>
+        <P3>celeste cuando te posicionas en el parrafo <br>
+            amarillo cuando sales del parrafo <br>
+            azul cuando pulsas en el parrafo</P3> <br>
+        (j) EJECUTAR CUANDO SE SELECCIONE O SALGA DE LA CAJA DE TEXT <br> <br>
+        <label for="">Usuario : </label>
+        <input type="text" name="" id="">
+        <label for="">Password : </label>
+        <input type="text" name="" id="">    
+    </h3>
+    <script>
+// 1- PERMITE OCULTAR EL ELEMENTO CUANDO SE HAGA CLICK
+        $(document).ready(function(){
+        // elemnto html 
+          $("button").click(function(){
+                $("p").hide();
+            });
+        });
+// 2- 
+//(2a)PERMITE OCULTAR EL MISMO ELEMENTO SELECCIONADO
+        $(document).ready(function(){
+            $("h6").click(function(){
+                $(this).hide();
+            });
+        });
+//(2b)CURSOR LLEVADO AL ELEMENTO, EMITA MENSAJE, RECONOCIENDO EL ELEMENTO POR ID
+        $(document).ready(function(){
+            $("#mensaje").mouseleave(function(){
+                $(this).hide();
+                alert("mensaje 1");
+            });
+        });
+//(2c)CURSOR LLEVADO AL ELEMENTO, EMITA MENSAJE, RECONOCIENDO EL ELEMENTO POR ID
+$(document).ready(function(){
+            $(".mensaje").mouseleave(function(){
+                $(this).hide();
+                alert("mensaje 2");
+            });
+        });
+//(2d)CURSOR LLEVADO AL ELEMENTO DESDE ABAJO, EMITA MENSAJE, RECONOCIENDO EL ELEMENTO POR CLASS
+$(document).ready(function(){
+            $(".mensaje3").mousedown(function(){
+                $(this).hide();
+                alert("mensaje 3");
+            });
+        });
+
+//(2e)CURSOR LLEVADO AL ELEMENTO DESDE ARRIBA, EMITA MENSAJE, RECONOCIENDO EL ELEMENTO POR CLASS
+$(document).ready(function(){
+            $(".mensaje4").mouseup(function(){
+                $(this).hide();
+                alert("mensaje 4");
+            });
+        });
+//(2f) DEPENDIENDO DEL MOVIMIENTO DEL CURSOR  DENTRO DEL ELEMENTO CAMBIA EL ESTILO DEL ELEMENTO
+$(document).ready(function(){
+            $("P3").on({
+                mouseenter: function() {
+                    $(this).css("background-color","#008080"); //celeste cuando te posicionas en el parrafo
+                },
+                mouseleave: function(){
+                    $(this).css("background-color" , "#AEB404" );  //amarillo cuando sales del parrafo
+                },
+                click: function(){
+                    $(this).css("background-color" , "#08088A");  //azul cuando pulsas en el parrafo
+                }
+            })
+        });
+// 3 SE EJECUTA CUANDO PULSAMOS  O SALIMOS DE LA CAJA 
+$(document).ready(function(){
+    $("input").focus(function(){     //se ejecuta cuando pulsamos en la caja del formulario
+        $(this).css("background-color" , "#FF00BF");
+    });
+    $("input").blur(function(){        // se ejecuta cuando salimos de la caja del formulario y pulsamos en otro
+        $(this).css("background-color", "#AEB404" );
+    });
+});
+    </script>
+</body>
+</html>
